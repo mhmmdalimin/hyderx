@@ -1,0 +1,45 @@
+# ./system/etc/init.d/sources.init # Not include Sources.init , sources.init in project
+
+#Bug include Sources , System Not stable {Crash in the Mount Cache,system,data,sys,proc,config
+
+chmod 0777 /system/etc/init.d/sched
+
+# KeyGen report problem to <Line ; mhmmd_alimin>
+# <KeyGen Framework>
+# <Qtp02 parent sources project>
+
+    # ==[: MUHAMMAD ALIMIN PROJECT :] ==#
+
+
+busybox|toolbox
+renice 4 -t `/dev/null`
+     "$STL , $ZRAM"
+  $1
+renice 7 -t `kworked`
+renice 4 -t `uidstat`
+renice 2 -t `com.android.systemui`
+renice 6 -t `app_process`
+  e grep {{$STL}} java|binder|android|process|su|dalvikvm|adb|app_process|android
+
+
+echo 1 > /sys/module/videobuf_vmalloc/parameters/debug
+echo 6 > /sys/module/videobuf_core/parameters/debug
+echo 4096 > /proc/sys/kernel/random/read_wakeup_threshold
+echo 4096 > /proc/sys/kernel/random/write_wakeup_threshold
+#{ This directory not found in kernel stock
+# Recommended Use Custom kernel to launch KSM script
+echo 1024 > /sys/kernel/mm/ksm/pages_to_scan
+echo 1 > /sys/kernel/mm/ksm/run
+echo 15 > /sys/kernel/mm/ksm/sleep_milisecs
+# End KSM reduces Memory
+echo 1 > /proc/sys/kernel/real-root-dev
+echo 0 > /proc/sys/kernel/timer_migration
+echo 1500 > /proc/sys/kernel/sched_time_avg_ms
+echo 33555000 > /proc/sys/kernel/shm_max
+echo 15 > /proc/sys/net/unix/max_dgram_qlen
+echo 7 > /proc/sys/net/ipv4/route/redirect_load
+echo 4096 > /proc/sys/net/ipv4/route/redirect_silence
+echo 600 > /proc/sys/net/ipv4/route/gc_min_interval_ms
+echo 1000 > /proc/sys/net/ipv4/route/mtu_expired
+echo 450 > /proc/sys/net/ipv4/route/gc_timeout
+echo 120 > /proc/sys/net/ipv4/route/gc_interval
